@@ -1,6 +1,6 @@
 ## MDN Exercises 👨‍💻
 
-Javascript exercises found in [Mozilla Developer Network's](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) web docs for study.
+Javascript exercises found in [Mozilla Developer Network's](https://developer.mozilla.org/en-US/docs/Learn/JavaScript) web docs for study.
 
 ## Todo 📝
 
