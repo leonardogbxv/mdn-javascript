@@ -4,10 +4,11 @@ Javascript exercises found in [Mozilla Developer Network's](https://developer.mo
 
 ## Todo 📝
 
-- [x] Module 1
-- [ ] Module 2
-- [ ] Module 3
-- [ ] Module 4
-- [ ] Module 5
+- [x] JS first steps
+- [x] JS building blocks
+- [ ] Introducing JS objects
+- [ ] Asynchronous JS
+- [ ] Client-side web APIs
+- [ ] ...
 
 © [MDN Web Docs](https://github.com/mdn/)
