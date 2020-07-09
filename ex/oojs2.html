@@ -24,6 +24,31 @@
   // let person1 = new Person('Leo')
   // let person2 = new Person('GB')
   
+  // function Person(first, last, age, gender, interests) {
+  //   this.name = {
+  //     first: first,
+  //     last: last
+  //   }
+  //   this.age = age
+  //   this.gender = gender
+  //   this.interests = interests
+  //   this.bio = function() {
+  //     alert(`${this.name.first} ${this.name.last} is ${this.age} years old. ${gender == 'male' ? 'He' : 'She'} likes ${this.interests[0]} and ${this.interests[1]}.`)
+  //   }
+  // }
+
+  // let person1 = new Person('Shinji', 'Ikari', 14, 'male', ['peace', 'music'])
+  // let person2 = new Person('Asuka', 'Langley Sohryu', 14, 'female', ['fights', 'EVA'])
+
+  // Person.prototype.farewell = function() {
+  //   alert(this.name.first + ' has left the building. Bye for now!')
+  // }
+
+  // Person.prototype.fullName = `${this.name.first} ${this.name.last}`
+
+  // A fairly common pattern for more object definitions is to define the properties inside the constructor, and the methods on the prototype.
+  // This makes the code easier to read, as the constructor only contains the property definitions, and the methods are split off into separate blocks.
+
   function Person(first, last, age, gender, interests) {
     this.name = {
       first: first,
@@ -32,9 +57,14 @@
     this.age = age
     this.gender = gender
     this.interests = interests
-    this.bio = function() {
-      alert(`${this.name.first} ${this.name.last} is ${this.age} years old. ${gender == 'male' ? 'He' : 'She'} likes ${this.interests[0]} and ${this.interests[1]}.`)
-    }
+  }
+
+  Person.prototype.bio = function() {
+    alert(`${this.name.first} ${this.name.last} is ${this.age} years old. ${this.gender == 'male' ? 'He' : 'She'} likes ${this.interests[0]} and ${this.interests[1]}.`)
+  }
+
+  Person.prototype.farewell = function() {
+    alert(`${this.name.first} has left the building. Bye for now!`)
   }
 
   let person1 = new Person('Shinji', 'Ikari', 14, 'male', ['peace', 'music'])
