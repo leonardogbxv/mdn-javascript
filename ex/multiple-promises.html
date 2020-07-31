@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>My test page</title>
+</head>
+<body>
+  <script>
+    // let a = fetch(url1)
+    // let b = fetch(url2)
+    // let c = fetch(url3)
+
+    // Promise.all([a, b, c]).then(values => {
+    //  ...
+    // })
+
+    function fetchAndDecode(url, type) {
+      return fetch(url).then(response => {
+        if(!response.ok) {
+          throw new Error(`HTTP erro! status: ${response.status}`)
+        } else {
+          if(type === 'blob') {
+            return response.blob()
+          } else if(type === 'text') {
+            return response.text()
+          }
+        }
+      })
+      .catch(e => {
+        console.log(`There has been a problem with your fetch operation for resource "${url}": ${e.message}`)
+      })
+    }
+
+    // begin fetching and decoding
+    let coffee = fetchAndDecode('coffee.jpg', 'blob')
+    let tea = fetchAndDecode('tea.jpg', 'blob')
+    let description = fetchAndDecode('description.txt', 'text')
+
+    Promise.all([coffee, tea, description]).then(values => {
+      console.log(values)
+      // store promises values
+      let objectURL1 = URL.createObjectURL(values[0])
+      let objectURL2 = URL.createObjectURL(values[1])
+      let descText = values[2]
+
+      // display imgs
+      let image1 = document.createElement('img')
+      let image2 = document.createElement('img')
+      image1.src = objectURL1
+      image2.src = objectURL2
+      document.body.appendChild(image1)
+      document.body.appendChild(image2)
+      
+      // display test
+      let para = document.createElement('p')
+      para.textContent = descText
+      document.body.appendChild(para)
+
+    })
+  </script>
+</body>
+</html>
