@@ -7,8 +7,7 @@ Javascript exercises found in [Mozilla Developer Network's](https://developer.mo
 - [x] JS first steps
 - [x] JS building blocks
 - [x] Introducing JS objects
-- [ ] Asynchronous JS
-- [ ] Client-side web APIs
+- [x] Asynchronous JS
 - [ ] ...
 
 © [MDN Web Docs](https://github.com/mdn/)
